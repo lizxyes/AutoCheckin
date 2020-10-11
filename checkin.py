@@ -53,7 +53,6 @@ def Checkin(desp, sckey):
         if b1.text.find('是 Yes') != -1:
             return 2
         elif b1.text.find('请选择') != -1:
-            pushWechat(desp, sckey)
             return 999
         else:
             b1.click()
