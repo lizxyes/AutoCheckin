@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 import requests
 
-def pushWechat(desp, sckey):
+def pushWechat(desp, sckey):    #微信推送函数，默认只推送 签到失败 的状态，如果要推送其他状态，请在文件最后输出的部分添加 'pushWechat(desp, sckey)' 部分
     send_url='https://sc.ftqq.com/' + sckey + '.send'
     params = {
         'text': '签到失败: '+ time.strftime('%Y-%m-%d %H:%M:%S'),
@@ -44,7 +44,6 @@ def Checkin(desp, sckey):
         browser.find_element_by_xpath('//*[@id="pdfDom"]').click()
         time.sleep(5)
         b1 = browser.find_element_by_xpath('//*[@id="select_1582538939790"]/div')
-        a = 1/0
         if b1.text.find('是 Yes') != -1:
             return 2
         else:
