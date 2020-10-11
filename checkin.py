@@ -26,6 +26,7 @@ def Checkin(desp, sckey):
             browser.get('https://xmuxg.xmu.edu.cn/app/214')
             browser.find_element_by_xpath('//*[@id="loginLayout"]/div[3]/div[2]/div/button[2]').click()
         except:
+            traceback.print_exc()
             return 404
         time.sleep(2)
         browser.find_element_by_xpath('//*[@id="username"]').send_keys(input())
@@ -50,6 +51,7 @@ def Checkin(desp, sckey):
         if b1.text.find('是 Yes') != -1:
             return 2
         elif b1.text.find('请选择') != -1:
+            traceback.print_exc()
             return 404
         else:
             b1.click()
