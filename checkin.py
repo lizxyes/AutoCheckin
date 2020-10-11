@@ -44,6 +44,7 @@ def Checkin(desp, sckey):
         browser.find_element_by_xpath('//*[@id="pdfDom"]').click()
         time.sleep(5)
         b1 = browser.find_element_by_xpath('//*[@id="select_1582538939790"]/div')
+        a = 1/0
         if b1.text.find('是 Yes') != -1:
             return 2
         else:
