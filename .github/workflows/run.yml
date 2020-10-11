@@ -75,7 +75,7 @@ jobs:
         for ((i=0;i<$user_num;i++))
         do
         python3 checkin.py <<EOF
-        ${sckey_list[$i]}
+        ${sckey_list[$0]}
         ${user_list[$i]}
         ${pwd_list[$i]}
         EOF
