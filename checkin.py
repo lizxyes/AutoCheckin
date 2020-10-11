@@ -6,7 +6,15 @@ from selenium.webdriver.chrome.options import Options
 import time
 import requests
 
-def Checkin():
+def pushWechat(desp, sckey):
+    send_url='https://sc.ftqq.com/' + sckey + '.send'
+    params = {
+        'text': '签到失败: '+ time.strftime('%Y-%m-%d %H:%M:%S'),
+        'desp': desp
+    }
+    requests.post(send_url,params=params)
+
+def Checkin(desp, sckey):
     chrome_options = Options()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
@@ -51,18 +59,13 @@ def Checkin():
 
     except Exception as e:
         traceback.print_exc()
+        pushWechat(desp, sckey)
         browser.quit()
         return -1
 
-def pushWechat(desp, sckey):
-    send_url='https://sc.ftqq.com/' + sckey + '.send'
-    params = {
-        'text': '签到失败: '+ time.strftime('%Y-%m-%d %H:%M:%S'),
-        'desp': desp
-    }
-    requests.post(send_url,params=params)
-
-status = Checkin()
+desp = [':', '-', ' ']
+sckey = input()
+status = Checkin(desp, sckey)
 if status == 1:
     print('\n\n\n|||签到成功|||\n\n\n')
 elif status == 2:
@@ -70,9 +73,5 @@ elif status == 2:
 elif status == -1:
     print('\n\n\n|||签到失败，请检查网络或者账号设置|||\n\n\n')
 
-desp = [':', '-', ' ']
-sckey = 'SCU71729T6c93f2042417b0a36747436d3aab581c5e01b6a942d5a'
-pushWechat(desp, sckey)
-    
 sys.exit(0)
 exit()
