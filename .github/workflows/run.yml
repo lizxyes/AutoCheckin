@@ -1,8 +1,8 @@
-name: 签到-
+name: 签到
 
 on:
   schedule:
-    - cron: '40 1,2 * * *'
+    - cron: '50 1,2 * * *'
   watch:
     types: started
 
