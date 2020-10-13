@@ -1,8 +1,8 @@
-name: autocheckin
+name: AutoCheckin
 
 on:
   schedule:
-    - cron: '45 0,2 * * *'
+    - cron: '30 23,1 * * *'
   watch:
     types: started
 
