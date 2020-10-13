@@ -1,8 +1,8 @@
-name: 签到
+name: autocheckin
 
 on:
   schedule:
-    - cron: '10 0,2 * * *'
+    - cron: '45 0,2 * * *'
   watch:
     types: started
 
