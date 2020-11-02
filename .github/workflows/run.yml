@@ -10,7 +10,7 @@ name: AutoCheckin
 on: 
 
   schedule:
-     - cron: '30 23,1 * * *'
+     - cron: '5 23,1 * * *'
   
   watch:  
      types: [started]
