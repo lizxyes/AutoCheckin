@@ -30,10 +30,10 @@ def Checkin(desp, sckey):
             traceback.print_exc()
             pushWechat(desp, sckey)
             return 404
-        time.sleep(2)
+        time.sleep(10)
         browser.find_element_by_xpath('//*[@id="username"]').send_keys(input())
         browser.find_element_by_xpath('//*[@id="password"]').send_keys(input())
-        time.sleep(2)
+        time.sleep(5)
         browser.find_element_by_xpath('//*[@id="casLoginForm"]/p[4]/button').click()
         time.sleep(5)
         browser.get('https://xmuxg.xmu.edu.cn/app/214')
