@@ -38,6 +38,7 @@ def Checkin(desp, sckey):
         time.sleep(5)
         browser.get('https://xmuxg.xmu.edu.cn/app/214')
         time.sleep(10)
+        browser.find_element_by_xpath('//*[@id="mainM"]/div/div/div/div[1]/div[1]/div[2]')
         browser.find_element_by_xpath('//*[@id="mainM"]/div/div/div/div[1]/div[2]/div/div[3]/div[2]').click()
         time.sleep(2)
         browser.find_element_by_xpath('/html/body').click()
